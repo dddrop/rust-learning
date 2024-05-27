@@ -1,17 +1,11 @@
-fn tell_temperature(temp: i32) {
-    let message = if temp <= 10 {
-        "It's cold!"
-    } else if temp <= 25 {
-        "It's nice"
-    } else if temp <= 30 {
-        "It's warm"
+fn fact(x: u32) -> u32 {
+    if x == 0 {
+        1
     } else {
-        "It's hot!"
-    };
-
-    println!("{}", message);
+        x * fact(x - 1)
+    }
 }
 
 fn main() {
-    tell_temperature(15);
+    println!("Fact of 5: {}", fact(5));
 }
