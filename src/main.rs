@@ -1,12 +1,10 @@
 fn main() {
-    let x = 5;
-    {
-        let mut x = 6;
-        assert_eq!(x, 6);
-        x += 1;
-        assert_eq!(x, 7);
-        x = 8;
-        assert_eq!(x, 8);
-    }
-    assert_eq!(x, 5);
+    let x;
+    x = 5;
+    println!("x == {}", x);
+
+    let mut y;
+    y = 5;
+    y += 1;
+    println!("y == {}", y);
 }
