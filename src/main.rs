@@ -1,4 +1,4 @@
 fn main() {
-    let result: bool = 2 + 3 == 5;
-    println!("{}", result);
+    assert!(4 + 7 == 11);
+    println!("If we got here, I guess it worked!");
 }
