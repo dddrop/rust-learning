@@ -1,8 +1,6 @@
 fn main() {
-    let mut x = 5;
+    let x = 80_000_000;
+    let y = 5_000_000;
 
-    let y = &mut x; // freeze
-    *y *= 2; // unfreeze
-
-    println!("x == {}", x);
+    println!("{}", x - y);
 }
