@@ -8,8 +8,8 @@ impl Fruit {
         self.apples * 8 + self.bananas * 12
     }
 
-    fn new() -> Fruit {
-        Fruit {
+    fn new() -> Self {
+        Self {
             apples: 10,
             bananas: 5,
         }
