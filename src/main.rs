@@ -1,7 +1,8 @@
-fn double(x: i32) -> i32 {
-    x * 2
+fn eat(count: i32, food: &str) {
+    println!("You ate {} helpings of {}", count, food);
 }
 
-fn main() -> () {
-    println!("3 * 2 == {}", double(3));
+fn main() {
+    eat(5, "apples");
+    eat(8, "bananas");
 }
