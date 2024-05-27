@@ -1,7 +1,7 @@
-fn say_apples(apples: i32) {
-    println!("I have {} apples", apples);
+fn double(x: i32) -> i32 {
+    x * 2
 }
 
-fn main() {
-    say_apples(10);
+fn main() -> () {
+    println!("3 * 2 == {}", double(3));
 }
