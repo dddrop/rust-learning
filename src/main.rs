@@ -1,11 +1,7 @@
-fn main(/* hey, I can do this! */) {
-    // This line is entirely ignored
-    println!("Hello, world!"); // This printed a message
-                               // All done, bye!
+fn say_apples(apples: i32) {
+    println!("I have {} apples", apples);
+}
 
-    /* This line is entirely ignored */
-    println!("Hello, world!" /* sneaky comment */);
-    /* All done, bye!
-      I had a great time programming with you.
-    */
+fn main() {
+    say_apples(10);
 }
