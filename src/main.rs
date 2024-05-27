@@ -1,12 +1,17 @@
-fn temperature() -> i32 {
-    15 // feel free to change this!
-}
-
-fn is_hot() -> bool {
-    temperature() > 30
-}
-
 fn main() {
-    assert!(is_hot() == false);
-    println!("Success!");
+    let x = true;
+    let y = !x; // not x
+    let z = !y; // not y
+
+    // All three of the following do the same thing
+    assert!(z == true);
+    assert_eq!(z, true);
+    assert!(z);
+
+    // Same for these three
+    assert!(y == false);
+    assert_eq!(y, false);
+    assert!(!y);
+
+    println!("Woohoo!");
 }
