@@ -4,20 +4,27 @@ struct Fruit {
 }
 
 impl Fruit {
-    fn price(&self) -> i32 {
-        self.apples * 8 + self.bananas * 12
-    }
-
-    fn new() -> Self {
-        Self {
+    fn new() -> Fruit {
+        Fruit {
             apples: 10,
             bananas: 5,
         }
     }
+
+    fn increase(mut self) -> Self {
+        self.apples *= 2;
+        self.bananas *= 3;
+        self
+    }
+
+    fn print(&self) {
+        println!(
+            "You have {} apples and {} bananas",
+            self.apples, self.bananas
+        );
+    }
 }
 
 fn main() {
-    let fruit = Fruit::new();
-    let price = fruit.price();
-    println!("Price is {}", price);
+    Fruit::new().increase().print();
 }
