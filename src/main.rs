@@ -1,6 +1,9 @@
 fn main() {
-    let first_name = "Michael";
-    let last_name = " Snoyman";
-    let full_name = first_name.to_owned() + last_name;
-    println!("Full name is {}", full_name);
+    let numbers: [i32; 5] = [2, 3, 8, 1, 9];
+    let mut i = 0;
+
+    while i < numbers.len() {
+        println!("numbers[{}] == {}", i, numbers[i]);
+        i += 1;
+    }
 }
