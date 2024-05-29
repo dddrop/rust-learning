@@ -1,24 +1,20 @@
-trait Double {
-    fn double(&self) -> Self;
+#[derive(Clone)]
+struct Fruit<T> {
+    apples: T,
+    bananas: T,
 }
 
-impl Double for i32 {
-    fn double(&self) -> Self {
-        self * 2
-    }
-}
-
-impl Double for i64 {
-    fn double(&self) -> Self {
-        self * 2
-    }
-}
-
-fn quadruple<T: Double>(x: T) -> T {
-    x.double().double()
+fn print_fruit(fruit: Fruit<i32>) {
+    println!("Apples: {}, bananas: {}", fruit.apples, fruit.bananas);
 }
 
 fn main() {
-    println!("double 5_i32 == {}", quadruple(5_i32));
-    println!("double 5_i64 == {}", quadruple(5_i64));
+    let mut fruit = Fruit {
+        apples: 5,
+        bananas: 10,
+    };
+    print_fruit(fruit.clone());
+    fruit.apples *= 2;
+    fruit.bananas *= 3;
+    print_fruit(fruit);
 }
