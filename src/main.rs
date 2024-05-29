@@ -14,7 +14,11 @@ impl Double for i64 {
     }
 }
 
+fn quadruple<T: Double>(x: T) -> T {
+    x.double().double()
+}
+
 fn main() {
-    println!("double 5_i32 == {}", 5_i32.double());
-    println!("double 5_i64 == {}", 5_i64.double());
+    println!("double 5_i32 == {}", quadruple(5_i32));
+    println!("double 5_i64 == {}", quadruple(5_i64));
 }
