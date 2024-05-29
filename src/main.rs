@@ -19,15 +19,9 @@ impl Person {
 impl Person {
     fn greeting(&self) -> String {
         match self.job {
-            Job::Teacher => {
-                format!("Hello, you're a teacher named {}", self.name)
-            }
-            Job::Scientist => {
-                format!("Hello, you're a scientist named {}", self.name)
-            }
-            Job::Chef => {
-                format!("Hello, you're a chef named {}", self.name)
-            }
+            Job::Teacher => format!("Hello, you're a teacher named {}", self.name),
+            Job::Scientist => format!("Hello, you're a scientist named {}", self.name),
+            Job::Chef => format!("Hello, you're a chef named {}", self.name),
         }
     }
 }
