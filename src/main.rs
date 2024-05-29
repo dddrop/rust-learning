@@ -1,10 +1,7 @@
 fn main() {
-    let mut fibs = vec![1, 1, 2, 3, 5, 8, 13];
+    let fibs = [1, 1, 2, 3, 5, 8, 13];
 
-    for x in fibs.iter_mut() {
+    for x in fibs.iter() {
         println!("{}", x);
-        *x *= 2;
     }
-
-    println!("{:?}", fibs);
 }
