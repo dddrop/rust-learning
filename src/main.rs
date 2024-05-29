@@ -1,13 +1,27 @@
-#[derive(Debug)]
-struct Fruit {
-    apples: i32,
-    bananas: i32,
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
+struct Person {
+    name: String,
+    age: u32,
 }
 
 fn main() {
-    let fruit = Fruit {
-        apples: 5,
-        bananas: 10,
+    let alice = Person {
+        name: "Alice".to_owned(),
+        age: 30,
     };
-    println!("{:?}", fruit);
+
+    let also_alice = alice.clone();
+    assert_eq!(alice, also_alice);
+    assert!(alice >= also_alice);
+    assert!(alice <= also_alice);
+
+    let bob = Person {
+        name: "Bob".to_owned(),
+        age: 25,
+    };
+
+    assert_ne!(alice, bob);
+
+    // What do you think is bigger, Alice or Bob?
+    println!("{:?} > {:?} == {}", alice, bob, alice > bob);
 }
