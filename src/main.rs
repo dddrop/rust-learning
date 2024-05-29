@@ -1,7 +1,7 @@
 fn main() {
-    let fibs = [1, 1, 2, 3, 5, 8, 13];
+    let name = "Michael";
 
-    for x in fibs.iter() {
+    for x in name.chars() {
         println!("{}", x);
     }
 }
