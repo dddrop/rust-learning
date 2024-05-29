@@ -1,48 +1,38 @@
+struct Person {
+    name: String,
+    age: u32,
+    job: Job,
+}
+
+#[derive(PartialEq, Eq)]
+enum Job {
+    Teacher,
+    Scientist,
+}
+impl Person {
+    fn same_job(&self, other: &Person) -> bool {
+        self.job == other.job
+    }
+}
+
 fn main() {
-    let speed = Mph { value: 90 };
-    let distance = speed.in_three_hours();
-    println!("At {:?}, you will travel {:?} in 3 hours", speed, distance);
-}
+    let alice = Person {
+        name: "Alice".to_owned(),
+        age: 30,
+        job: Job::Scientist,
+    };
+    let bob = Person {
+        name: "Bob".to_owned(),
+        age: 35,
+        job: Job::Scientist,
+    };
+    let charlie = Person {
+        name: "Charlie".to_owned(),
+        age: 40,
+        job: Job::Teacher,
+    };
 
-#[derive(Debug, Clone, Copy)]
-struct Kmh {
-    value: u32,
-}
-
-#[derive(Debug, Clone, Copy)]
-struct Km {
-    value: u32,
-}
-
-#[derive(Debug, Clone, Copy)]
-struct Mph {
-    value: i32,
-}
-
-#[derive(Debug, Clone, Copy)]
-struct Miles {
-    value: i32,
-}
-
-trait InThreeHours {
-    type Distance;
-    fn in_three_hours(&self) -> Self::Distance;
-}
-
-impl InThreeHours for Kmh {
-    type Distance = Km;
-    fn in_three_hours(&self) -> Km {
-        Km {
-            value: self.value * 3,
-        }
-    }
-}
-
-impl InThreeHours for Mph {
-    type Distance = Miles;
-    fn in_three_hours(&self) -> Miles {
-        Miles {
-            value: self.value * 3,
-        }
-    }
+    assert!(alice.same_job(&bob));
+    assert!(!alice.same_job(&charlie));
+    println!("Success!");
 }
