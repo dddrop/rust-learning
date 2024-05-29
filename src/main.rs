@@ -10,6 +10,17 @@ enum Job {
     Scientist,
     Chef,
 }
+
+impl Job {
+    fn is_teacher(&self) -> bool {
+        match self {
+            Job::Teacher => true,
+            Job::Scientist => false,
+            Job::Chef => false,
+        }
+    }
+}
+
 impl Person {
     fn same_job(&self, other: &Person) -> bool {
         self.job == other.job
