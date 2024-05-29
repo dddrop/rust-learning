@@ -5,8 +5,13 @@ struct Person {
 }
 
 #[derive(PartialEq, Eq)]
+enum Subject {
+    Math,
+}
+
+#[derive(PartialEq, Eq)]
 enum Job {
-    Teacher,
+    Teacher(Subject),
     Scientist,
     Chef,
 }
@@ -14,7 +19,7 @@ enum Job {
 impl Job {
     fn is_teacher(&self) -> bool {
         match self {
-            Job::Teacher => true,
+            Job::Teacher(_) => true,
             Job::Scientist => false,
             Job::Chef => false,
         }
@@ -30,7 +35,7 @@ impl Person {
 impl Person {
     fn greeting(&self) -> String {
         match self.job {
-            Job::Teacher => format!("Hello, you're a teacher named {}", self.name),
+            Job::Teacher(_) => format!("Hello, you're a teacher named {}", self.name),
             Job::Scientist => format!("Hello, you're a scientist named {}", self.name),
             Job::Chef => format!("Hello, you're a chef named {}", self.name),
         }
